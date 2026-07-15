@@ -1,0 +1,82 @@
+# ---------------------------------------------------------------------------
+# houndmasker .gitignore
+#
+# This tool handles sensitive data. The rules below exist primarily to make it
+# hard to ACCIDENTALLY commit a customer's Active Directory data or the mapping
+# file that reverses the masking. Review before removing anything.
+# ---------------------------------------------------------------------------
+
+# --- The reversal key: NEVER commit this ----------------------------------
+# mapping.json links masked tokens back to real identities. Treat it like a
+# credential. Ignored wherever it appears.
+mapping.json
+**/mapping.json
+
+# --- Tool output ----------------------------------------------------------
+# Default date-stamped output dir and common custom names.
+modified_files_*/
+mod/
+masked/
+*_masked/
+client_masked/
+out/
+output/
+
+# --- Raw BloodHound / SharpHound collections ------------------------------
+# SharpHound CE emits these per-type files (often with a timestamp prefix) and
+# a zip. These ARE the sensitive input — keep them out of the repo entirely.
+*_domains.json
+*_users.json
+*_groups.json
+*_computers.json
+*_gpos.json
+*_ous.json
+*_containers.json
+*_certtemplates.json
+*_enterprisecas.json
+*_aiacas.json
+*_rootcas.json
+*_ntauthstores.json
+*_issuancepolicies.json
+*BloodHound*.zip
+*bloodhound*.zip
+*.bin
+
+# Local lab / sample data folders
+LabFiles/
+BHLabFiles/
+labdata/
+samples/
+
+# --- Internal (not for the public repo) -----------------------------------
+# CLAUDE.md is the project knowledge file for our own dev workflow, not for
+# users landing on the repo. Keep it local.
+CLAUDE.md
+
+# --- Python ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Editors / OS ---------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# --- Env / secrets --------------------------------------------------------
+.env
+.env.*
