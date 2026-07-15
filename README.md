@@ -13,7 +13,7 @@ conclusions ("user47 has a 3-hop path to Domain Admins") without ever seeing
 who user47 really is.
 
 <!-- ADD YOUR BLOG POST URL BELOW -->
-> **Full write-up and walkthrough:** _add your blog post link here_ (`https://blog.abhis3k.in/...`)
+> **Full write-up and walkthrough:** https://abhis3k.in/blog/houndmasker-privacy-preserving-attack-path-analysis-for-bloodhound/
 >
 > The post covers the problem, the design decisions, and a start-to-finish
 > walkthrough: mask, import into BloodHound, analyze with AI over MCP, then unmask.
