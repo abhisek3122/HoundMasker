@@ -20,6 +20,12 @@ who user47 really is.
 
 ---
 
+## Supported data
+ 
+HoundMasker currently supports **on-prem Active Directory** BloodHound data only (SharpHound / bloodhound-python collections). **Azure / Entra ID (AzureAD) exports are not supported at the moment.**
+
+---
+
 ## What it does
 
 - Replaces domain names, usernames, computer names, custom group names, GPO
